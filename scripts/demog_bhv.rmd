@@ -9,6 +9,7 @@ editor_options:
 ---
 
 ### packages and libraries
+
 ```{r}
 install.packages("pastecs")
 library(pastecs)
@@ -19,6 +20,7 @@ db_data <- read.csv("../data/ca_demog_bhv.csv")
 ```
 
 ### the data
+
 -   **ID**
 
     -   **ANH000 - autims-anxiety controls**
@@ -109,9 +111,8 @@ db_data <- read.csv("../data/ca_demog_bhv.csv")
 -   **MASC(PV)** - multidimensional anxiety scale for children scores
 
 ### descriptive stats
+
 ```{r}
 desc_stats <- pastecs::stat.desc(db_data, basic=FALSE, norm=TRUE)
 
 ```
-
-
