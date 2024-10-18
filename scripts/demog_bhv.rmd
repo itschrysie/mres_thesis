@@ -14,11 +14,11 @@ install.packages("pastecs")
 library(pastecs)
 ```
 
-### the data
 ```{r loading the data}
 db_data <- read.csv("../data/ca_demog_bhv.csv")
 ```
 
+### the data
 -   **ID**
 
     -   **ANH000 - autims-anxiety controls**
