@@ -6,4 +6,4 @@
 
 
 
-https://tenor.com/en-GB/view/math-calculate-confusing-figure-out-gif-6237717)
+#https://tenor.com/en-GB/view/math-calculate-confusing-figure-out-gif-6237717
