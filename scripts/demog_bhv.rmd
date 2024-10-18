@@ -3,28 +3,115 @@ title: "demog_bhv.rmd"
 author: "chrysie"
 date: "2024-10-18"
 output: html_document
+editor_options: 
+  markdown: 
+    wrap: 72
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+### packages and libraries
+```{r}
+install.packages("pastecs")
+library(pastecs)
 ```
 
-## R Markdown
-
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
-
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-
-```{r cars}
-summary(cars)
+### the data
+```{r loading the data}
+db_data <- read.csv("../data/ca_demog_bhv.csv")
 ```
 
-## Including Plots
+-   **ID**
 
-You can also embed plots, for example:
+    -   **ANH000 - autims-anxiety controls**
 
-```{r pressure, echo=FALSE}
-plot(pressure)
+    -   **AC000 - autism controls**
+
+    -   **AN000 - autism and anxiety**
+
+    -   **RDH000 - disruptive behaviour-irritability controls**
+
+    -   **RD000 - disruptive behaviour and irritability (some with
+        ASD)**
+
+-   **IQ**
+
+-   **IQ_demeaned - IQ scores centered**
+
+-   **Age**
+
+-   **Age_demeaned - age centered**
+
+-   **Gender**
+
+    -   **1 - male**
+
+    -   **0 - female**
+
+-   **Race**
+
+    -   **2**
+
+    -   **4**
+
+    -   **5**
+
+    -   **6**
+
+-   **Ethnicity** - Hispanic or not
+
+    -   1
+
+    -   0
+
+-   **Meds**
+
+    -   **1 - yes, on medication**
+
+    -   **0 - no, not on medication**
+
+-   **Baseline_fdmean** - baseline framewise displacement mean
+
+-   **Include_lowmotion**
+
+    -   **1 - yes, ppt had low motion**
+
+    -   **0 - no, ppt had high motion**
+
+-   **Motioncutoff0.5**
+
+    -   1 - below 0.5 motion
+
+    -   0 - above 0.5 motion
+
+-   **SRS_SCI_Tscore** - social responsiveness scale social
+    communication index t scores
+
+-   **SRS_SCI** - social responsiveness scale social communication index
+    raw scores
+
+-   **SCI_demeaned** - SRS social communication index raw scores
+    centered
+
+-   **SRS_RRB_Tscore** - social responsiveness scale restricted
+    repetitive behaviours t scores
+
+-   **SRS_RRB** - social responsiveness scale restricted repetitive
+    behaviours raw scores
+
+-   **RRB_demeaned** - SRS restricted repetitive behaviour raw scores
+    centred
+
+-   **SRS_TOTAL_Tscore** - social responsiveness scale total t scores
+
+-   **SRS_total** - social responsiveness scale total raw scores
+
+-   **SRS_demeaned** - SRS raw scores centered
+
+-   **MASC(PV)** - multidimensional anxiety scale for children scores
+
+### descriptive stats
+```{r}
+desc_stats <- pastecs::stat.desc(db_data, basic=FALSE, norm=TRUE)
+
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
