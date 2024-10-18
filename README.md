@@ -1,4 +1,4 @@
-**UCL-Yale MRes Thesis Project**
+## **UCL-Yale MRes Thesis Project**
 
 ![](images/calculating_meme.jpg)
 
